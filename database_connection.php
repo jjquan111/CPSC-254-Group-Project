@@ -1,8 +1,8 @@
 <?php
-$host = '127.0.0.1';  // Use IP address to force TCP connection
+$host = 'localhost'; 
 $dbname = 'calendar';
-$username = 'your_username'; // Ensure this is your actual MySQL username
-$password = 'your_password'; // Ensure this is your actual MySQL password
+$username = 'root';
+$password = 'Jerry@121';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password, [
