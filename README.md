@@ -32,7 +32,9 @@ Set Up Database (MySQL):
 mysql -u root -p
 
 mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+
 mysql> GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost';
+
 mysql> FLUSH PRIVILEGES;
 
 Adjust File Permissions:
