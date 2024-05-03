@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost'; 
 $dbname = 'calendar';
-$username = 'root';
-$password = '';
+$username = 'root'; // Change to the username you created with appropriate privileges
+$password = 'new_password'; // Change to the password for the new user
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password, [
