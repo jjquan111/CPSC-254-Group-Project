@@ -7,7 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$stmt = $pdo->prepare("SELECT * FROM events WHERE user_id = ?");
+$query = "SELECT id, title, DATE_FORMAT(start_event, '%Y-%m-%d') as start, DATE_FORMAT(end_event, '%Y-%m-%d') as end FROM events WHERE user_id = ?";
+$stmt = $pdo->prepare($query);
 $stmt->execute([$_SESSION['user_id']]);
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -34,10 +35,15 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h1>My Events</h1>
-    <a href="dynamic-full-calendar.php" class="button">Back to Calendar</a>
+    <a href="dynamic_full_calendar.php" class="button">Back to Calendar</a>
     <?php foreach ($events as $event): ?>
         <p>
             <?php echo htmlspecialchars($event['title']); ?>
+            <br>
+            Start: <?php echo htmlspecialchars($event['start']); ?>
+            <br>
+            End: <?php echo htmlspecialchars($event['end']); ?>
+            <br>
             <button class="button" onclick="deleteEvent(<?php echo $event['id']; ?>)">Delete</button>
         </p>
     <?php endforeach; ?>
@@ -66,5 +72,3 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </script>
 </body>
 </html>
-
-
