@@ -20,13 +20,14 @@ Before you begin, ensure you have met the following requirements:
 
 ### Installation
 
-1. **Clone the repository**:
+**Clone the repository**:
    ```bash
    git clone https://github.com/jjquan111/CPSC-254-Group-Project
    cd CPSC-254-Group-project
 
-Configure Web Server (Apache):
-sudo cp -r /path/to/project/* /var/www/html/
+**Configure Web Server (Apache)**:
+   ```bash
+   sudo cp -r /path/to/project/* /var/www/html/
 
 Set Up Database (MySQL):
 mysql -u root -p
