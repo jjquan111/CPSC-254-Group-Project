@@ -24,3 +24,18 @@ Before you begin, ensure you have met the following requirements:
    ```bash
    git clone https://github.com/jjquan111/CPSC-254-Group-Project
    cd CPSC-254-Group-project
+
+Configure Web Server (Apache):
+sudo cp -r /path/to/project/* /var/www/html/
+
+Set Up Database (MySQL):
+mysql -u root -p
+
+mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+mysql> GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost';
+mysql> FLUSH PRIVILEGES;
+
+Adjust File Permissions:
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
+Once you've completed these steps, your web server should be configured to serve the project files, the database should be set up and ready to use, and file permissions should be adjusted appropriately. You can now access the project through a web browser and interact with it as intended.
