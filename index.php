@@ -13,7 +13,7 @@ if (isset($_SESSION['user_id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to Our Calendar App</title>
+    <title>Welcome to Our Calendar App Eventify</title>
     <style>
         body {
             font-family: Arial, sans-serif;
