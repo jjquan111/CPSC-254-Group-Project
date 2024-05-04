@@ -9,6 +9,7 @@ if (isset($_SESSION['user_id'])) {
 // Simple navigation for the user
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,26 +19,37 @@ if (isset($_SESSION['user_id'])) {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background: linear-gradient(to bottom, #ADD8E6, #FBCEB1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            width: 80%;
-            margin: 0 auto;
+            width: 50%;
             padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        .options {
+         .options {
             display: flex;
-            justify-content: space-between;
-            width: 200px;
-            margin: 20px 0;
+            justify-content: center;
         }
-        a {
-            color: #333;
+        .options a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: #ffffff;
             text-decoration: none;
+            border-radius: 5px;
         }
-        a:hover {
-            color: #007BFF;
-        }
+        .options a:hover {
+            background-color: #0056b3;
+        } 
+        
     </style>
 </head>
 <body>
