@@ -17,36 +17,46 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <title>My Events</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: none;
+        .event-card {
+            margin: 10px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            display: inline-block;
+            background-color: #f9f9f9;
+        }
+        .event-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .event-body {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>My Events</h1>
-    <a href="dynamic_full_calendar.php" class="button">Back to Calendar</a>
-    <?php foreach ($events as $event): ?>
-        <p>
-            <?php echo htmlspecialchars($event['title']); ?>
-            <br>
-            Start: <?php echo htmlspecialchars($event['start']); ?>
-            <br>
-            End: <?php echo htmlspecialchars($event['end']); ?>
-            <br>
-            <button class="button" onclick="deleteEvent(<?php echo $event['id']; ?>)">Delete</button>
-        </p>
-    <?php endforeach; ?>
+    <div class="container">
+        <h1 class="my-4">My Events</h1>
+        <a href="dynamic_full_calendar.php" class="btn btn-primary mb-3">Back to Calendar</a>
+        <?php foreach ($events as $event): ?>
+            <div class="event-card">
+                <div class="event-header">
+                    <h5><?php echo htmlspecialchars($event['title']); ?></h5>
+                    <button class="btn btn-danger" onclick="deleteEvent(<?php echo $event['id']; ?>)">Delete</button>
+                </div>
+                <div class="event-body">
+                    <p>Start: <?php echo htmlspecialchars($event['start']); ?></p>
+                    <p>End: <?php echo htmlspecialchars($event['end']); ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
     function deleteEvent(eventId) {
         if (confirm('Are you sure you want to delete this event?')) {
