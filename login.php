@@ -31,7 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ADD8E6;
+            background: linear-gradient(to bottom, #ADD8E6, #FBCEB1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
