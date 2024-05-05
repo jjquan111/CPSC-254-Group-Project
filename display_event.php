@@ -19,6 +19,10 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>My Events</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        body{
+            background: linear-gradient(to bottom, #ADD8E6, #FBCEB1);
+            height: 100vh;
+        }
         .event-card {
             margin: 10px 0;
             padding: 20px;
@@ -30,9 +34,11 @@ $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
         }
         .event-body {
             margin-top: 10px;
+            
         }
     </style>
 </head>
