@@ -58,7 +58,7 @@ if (isset($_SESSION['user_id'])) {
         <p>Please choose one of the following options:</p>
         <div class="options">
             <a href="login.php">Login</a>
-            <a href="register.php">Sign Up</a>
+            <a href="register.php">Register</a>
         </div>
     </div>
 </body>
